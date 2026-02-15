@@ -6,8 +6,6 @@
 infiNIS team car scheme for participation in INFOMATRIX 2026 (Arduino Hackathon category)
 
 
-# infiNIS TEAM — INFOMATRIX ASIA 2026
-
 Project Demonstration  
 ![WhatsApp Image 2026-02-14 at 14 16 07](https://github.com/user-attachments/assets/cbc7081d-4656-405d-8ff5-23f129a42665)
 
