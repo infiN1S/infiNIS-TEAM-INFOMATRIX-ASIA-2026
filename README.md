@@ -3,7 +3,7 @@
 
 ![INFOMATRIX CXEMA-2026](https://github.com/user-attachments/assets/710ee794-36ea-46c3-a255-23dc5e89beec)
 
-infiNIS Team Robot schemе for participation in INFOMATRIX 2026 (Arduino Hackathon category)
+infiNIS team car scheme for participation in INFOMATRIX 2026 (Arduino Hackathon category)
 
 
 # infiNIS TEAM — INFOMATRIX ASIA 2026
