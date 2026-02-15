@@ -10,6 +10,22 @@ Project Demonstration
 https://youtu.be/wcpWxVT-lmU?si=uNbnNw2dgn9xYBOi
 
 ---
+---
+
+## Navigation
+
+- [Overview](#overview)
+- [Hardware](#hardware)
+- [Software Requirements](#software-requirements)
+- [Installation](#installation)
+- [Uploading Firmware](#uploading-firmware)
+- [WiFi Configuration](#wifi-configuration)
+- [Control Modes and Code Description](#control-modes-and-code-description)
+- [Development Process](#development-process)
+- [Competition Results](#competition-results)
+- [Media Coverage](#media-coverage)
+
+---
 
 ## Overview
 
