@@ -12,21 +12,23 @@ Project Demonstration
 https://youtu.be/wcpWxVT-lmU?si=uNbnNw2dgn9xYBOi
 
 ---
----
 
 ## Navigation
 
 - [Overview](#overview)
-- [Hardware](#hardware)
-- [Software Requirements](#software-requirements)
-- [Installation](#installation)
-- [Uploading Firmware](#uploading-firmware)
+- [Development Environment and Implementation](#development-environment-and-implementation)
 - [Control Modes and Code Description](#control-modes-and-code-description)
+  - [Phone Control (WiFi)](#1-phone-control-wifi)
+  - [Gamepad Control (Bluetooth – Bluepad32)](#2-gamepad-control-bluetooth--bluepad32)
 - [Development Process](#development-process)
+  - [Chassis Manufacturing](#1-chassis-manufacturing)
+  - [Electronics Assembly & Wiring](#2-electronics-assembly--wiring)
+  - [Final Robot Integration](#3-final-robot-integration)
 - [Competition Results](#competition-results)
 - [Media Coverage](#media-coverage)
 
 ---
+
 
 ## Overview
 
@@ -43,133 +45,32 @@ The project focuses on stability, scalability and clean architecture.
 
 ---
 
-## Hardware
+## Development Environment and Implementation
 
-- ESP32 Dev Module  
-- 4 DC motors  
-- Motor drivers (PWM controlled)  
-- External power supply  
-- Custom chassis  
+The robot firmware was developed using Arduino IDE with ESP32 board support installed.
 
-Important: Motors must NEVER be powered directly from ESP32 pins.
+The project is built on the ESP32 Dev Module platform.  
+ESP32 board package by Espressif Systems was installed through Arduino Board Manager to enable compilation and flashing.
 
----
+The following libraries were used in the firmware:
 
-## Software Requirements
-
-## Required Software and Libraries
-
-Before uploading the firmware, make sure the following software and libraries are installed.
-
-### 1. Arduino IDE
-Install the latest stable version of Arduino IDE.
-
-### 2. ESP32 Board Package
-1) Open Arduino IDE  
-2) Go to File → Preferences  
-3) In "Additional Boards Manager URLs" add:
-https://raw.githubusercontent.com/espressif/arduino-esp32/gh-pages/package_esp32_index.json  
-4) Go to Tools → Board → Boards Manager  
-5) Search for "ESP32"  
-6) Install the latest version by Espressif Systems  
-7) Select board: ESP32 Dev Module  
-
-### 3. Required Libraries
-
-Install the following libraries via:
-Sketch → Include Library → Manage Libraries
-
-- WiFi (included with ESP32 core)
+- WiFi (built-in ESP32 library)
+- LittleFS (internal flash file system)
 - SettingsGyver
 - GyverDBFile
-- LittleFS (included with ESP32 core)
-- Bluepad32
+- Bluepad32 (for Bluetooth gamepad control)
 
-Search each library by name in Library Manager and install the latest stable version.
+WiFi and LittleFS are included within the ESP32 board core package.  
+SettingsGyver and GyverDBFile are used for structured configuration handling and persistent parameter storage.  
+Bluepad32 provides real-time Bluetooth gamepad input processing.
 
-### 4. Required Includes in Firmware
+The firmware was compiled and uploaded to the ESP32 Dev Module using USB connection.  
+Standard flash configuration settings were used for stable operation.
 
-The project uses the following libraries in the code:
+After flashing, the ESP32 operates in Access Point mode for WiFi control and supports Bluetooth pairing for gamepad control.
 
-#include <Arduino.h>
-#include <WiFi.h>
-#include <SettingsGyver.h>
-#include <GyverDBFile.h>
-#include <LittleFS.h>
-#include <Bluepad32.h>
+This development setup ensures reliable firmware updates, modular expansion and repeatable deployment across hardware revisions.
 
-Make sure all libraries are successfully installed before compiling.
-
-
----
-
-## Installing ESP32 Board
-
-1. Open Arduino IDE  
-2. Go to File → Preferences  
-3. Add ESP32 package URL into "Additional Boards Manager URLs"  
-4. Open Tools → Board → Boards Manager  
-5. Search for "ESP32 by Espressif Systems"  
-6. Install latest stable version  
-7. Select Tools → Board → ESP32 Dev Module  
-
----
-
-## Installation
-
-Download the repository as ZIP from GitHub and extract it.
-
-Open the .ino file inside Arduino IDE.
-
----
-
-## Uploading Firmware
-
-1. Connect ESP32 via USB  
-2. Select Board: ESP32 Dev Module  
-3. Select correct COM Port  
-4. Click Upload  
-5. Wait until flashing is complete  
-
-If upload fails:
-- Hold BOOT button while clicking Upload
-- Release BOOT when flashing starts
-
----
-
-## WiFi Mode
-
-After successful upload, ESP32 creates its own WiFi Access Point.
-
-SSID and password are defined inside the firmware.
-
-Connect to the ESP32 network to control the robot.
-
----
-
-## System Architecture
-
-The firmware includes:
-
-- Motor struct-based configuration  
-- Independent PWM channels per motor  
-- Inversion control per motor  
-- 20 kHz PWM frequency  
-- Flash storage using LittleFS  
-
-This structure allows future extension without rewriting core logic.
-
----
-
-## Safety Notes
-
-- Use stable external power supply  
-- Do not power motors from ESP32  
-- Disconnect power before changing wiring  
-- Use proper motor drivers rated for your current  
-
-
----
 
 ## Control Modes and Code Description
 
