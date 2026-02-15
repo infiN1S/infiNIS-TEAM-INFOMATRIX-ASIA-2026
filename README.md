@@ -5,6 +5,8 @@ infiNIS TEAM | INFOMATRIX-ASIA 2026 code
 # infiNIS TEAM — INFOMATRIX ASIA 2026
 
 Project Demonstration  
+![WhatsApp Image 2026-02-14 at 14 16 07](https://github.com/user-attachments/assets/cbc7081d-4656-405d-8ff5-23f129a42665)
+
 https://youtu.be/wcpWxVT-lmU?si=uNbnNw2dgn9xYBOi
 
 ---
@@ -149,5 +151,122 @@ This structure allows future extension without rewriting core logic.
 - Disconnect power before changing wiring  
 - Use proper motor drivers rated for your current  
 
+
 ---
 
+## Control Modes and Code Description
+
+This project supports two control modes: WiFi (phone control) and Bluetooth (gamepad control).
+
+---
+
+### 1) Phone Control (WiFi)
+
+Photo:  
+![WhatsApp Image 2026-02-15 at 23 20 40](https://github.com/user-attachments/assets/ad65dc93-e9a6-4e02-814a-90b34132c75f)
+
+
+Description:  
+The code implements Wi-Fi control of the robot.
+The ESP32 creates its own access point and launches a web page with virtual joysticks, allowing real-time control of the robot directly from a smartphone browser.
+
+Firmware file:  
+[InfiNIS_code_wifi_phone](InfiNIS_code_wifi_phone)
+
+---
+
+### 2) Gamepad Control (Bluetooth – Bluepad32)
+
+Photo:
+![WhatsApp Image 2026-02-15 at 23 24 19](https://github.com/user-attachments/assets/600934f1-f969-47ac-af32-cd0454d40ac0)
+
+
+Description:  
+The code implements Bluetooth control of the robot.
+The ESP32 connects to a Bluetooth gamepad and uses the joystick inputs to control the robot’s movement in real time.
+
+Firmware file:  
+[InfiNIS_code_bluetooth_joystick.ino](InfiNIS_code_bluetooth_joystick.ino)
+
+---
+
+## Development Process
+
+The robot was fully built by our team from scratch — from mechanical base to final firmware testing.
+
+### 1. Chassis Manufacturing
+
+The base platform was made from plywood.  
+We measured, marked and cut all structural elements manually to match our robot dimensions.
+
+![WhatsApp Image 2026-02-15 at 23 06 37](https://github.com/user-attachments/assets/a524c51e-f72a-466d-97de-55b366eb3e35)
+
+
+All parts were carefully aligned to ensure correct motor placement and structural rigidity.
+
+---
+
+### 2. Electronics Assembly & Wiring
+
+After assembling the frame, we installed:
+
+- ESP32 controller
+- Motor drivers
+- Power distribution system
+- Battery pack
+
+All connections were soldered manually to ensure stable power supply and reliable signal transmission.
+
+![WhatsApp Image 2026-02-15 at 23 06 38](https://github.com/user-attachments/assets/951e9f1b-3be7-4023-9b68-f80e9732239f)
+
+
+We carefully organized cables to avoid interference and voltage drops.
+
+---
+
+### 3. Final Robot Integration
+
+After mechanical and electronic integration, the system was tested in both control modes:
+
+- Bluetooth (Gamepad via Bluepad32)
+- WiFi (Phone control)
+
+![WhatsApp Image 2026-02-15 at 23 06 38 (1)](https://github.com/user-attachments/assets/1ea876c8-97d2-43f5-9006-eae838814d6e)
+
+
+Multiple test sessions were conducted to verify motor synchronization, responsiveness and stability.
+
+---
+
+## Competition Results
+
+### INFOMATRIX (Previous Season)
+
+Our team participated in INFOMATRIX last year and achieved:
+
+3rd place
+
+This result reflects:
+
+- Strong engineering design
+- Reliable hardware implementation
+- Stable firmware architecture
+- Effective teamwork under competition conditions
+
+![WhatsApp Image 2026-02-15 at 23 09 34](https://github.com/user-attachments/assets/e4325ce1-4d43-4ec7-bb89-5cc4cae53ba5)
+
+![WhatsApp Image 2026-02-15 at 23 09 17 (1)](https://github.com/user-attachments/assets/57028b99-c116-4c1d-a345-cfd881e05851)
+
+---
+
+## Media Coverage
+
+Our team's achievements were covered by official media sources:
+
+- Source: 7-su.kz  
+  https://share.google/nVxQP4ZnoGfBamJ7k  
+
+- Source: Nazarbayev Intellectual Schools  
+  https://share.google/n9fkkaTrxCs6kUAf5  
+
+This experience helped us improve our current robot platform and software structure for the 2026 season.
